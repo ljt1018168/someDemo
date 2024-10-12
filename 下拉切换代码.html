@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <script type="text/javascript">
+        //费用类型切换
+        form.on('select(fee_type_filter)', function (data) {
+            const feeTypeMap = {
+                '1': 'venue_fee',// 场地费
+                '2': 'property_fee',// 物业费
+                '3': 'decoration_fee',// 装修费
+            };
+            let feeTypeId = data.value;
+            // 正确构造选择器并显示对应的div
+            const selector = `#${feeTypeMap[feeTypeId]}`;
+            $(selector).show();
+            form.render();
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
